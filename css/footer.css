@@ -1,8 +1,4 @@
 
-footer.footer {
-
-}
-
 .footer-row--grid {
     display: grid;
     gap: 1em;
@@ -28,6 +24,8 @@ footer.footer {
 }
 .footer-row--logo {
     padding-inline: 1rem;
+    width: 100%;
+    height: auto;
 }
 
 @media(min-width: 1024px){

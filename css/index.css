@@ -11,7 +11,7 @@
     list-style: none;
     padding-left: 0;
     display: flex;
-    gap: 1rem;
+    
     flex-wrap: wrap;
 }
 
@@ -19,7 +19,7 @@
 .app-row.row--0 a {
     text-decoration: none;
     color: inherit;
-    font-size: 2.74rem;
+    font-size: 18px;
 }
 
 .offset-shoes {
@@ -47,10 +47,18 @@
 
 
 .anchor-divider {
-    font-size: 2.44rem;
+    font-size: 1.44rem;
     margin-inline: 0.5rem;
 }
+@media(min-width: 768px) {
+    .app-row.row--0 a  {
+        font-size: 2.74rem;
+    }
 
+    .anchor-divider {
+        font-size: 2.44rem;
+    }
+}
 .app-row h2 {
     font-size: 1.3583rem;
     padding-inline: 0.5rem;
@@ -131,7 +139,7 @@
     top: 41px;
     left: 0;
     right: 0;
-    background-color: rgba(98, 60, 234);
+    background-color: rgb(174, 160, 224);
     color: white;
     z-index: 4;
 }
@@ -147,7 +155,6 @@
     padding-left: 0;
     padding-right: 3rem; 
 }
-
 
 .filterAction--checkbox span.downArrow::after {
     content: 'v';
@@ -178,6 +185,7 @@
 
 .filterAction--checkbox input[type=checkbox]:checked ~ .filterActions-block {
     display: block;
+    color: white;
 }
 .row-4--grid {
     display: grid;
@@ -286,7 +294,7 @@
 .row--10.blog{
 
    
-    border-bottom: 1px solid black;
+
     display: grid;
     gap: 1rem;
 }

@@ -10,9 +10,7 @@
    position: relative;
 }
 
-.swiper-wrapper {
-    
-}
+
 
 .swiper-slide {
     border: 1px solid black;
@@ -72,11 +70,4 @@
 .swiper-buttons--next {
     position: absolute;
     left: 3rem;
-}
-
-.swiper-buttons .swiper-button-prev {
-    /* position: absolute;
-    bottom: 0;
-    z-index: 11;
-    top: 1rem; */
 }
