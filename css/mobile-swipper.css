@@ -1,0 +1,81 @@
+
+
+.row-2--mobilegrid {
+
+    position: relative;
+}
+.mobile-swipper--2 {
+   overflow: hidden;
+   position: relative;
+}
+
+.swiper-wrapper {
+    
+}
+
+.swiper-slide {
+    border: 1px solid black;
+}
+
+.swiper-slide .swipper-slide--image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center 50%;
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide .swipper-slide--image:hover {
+    transform: scaleX(-1);
+}
+
+.swiper-slide .swipper-slide--description {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.swiper-slide:nth-child(n+1) {
+    width: 85%;
+}
+
+/* .pagination-mover {
+   position: absolute;
+    
+} */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+
+    text-align: start;
+    padding: 0.6em 0;
+    padding-left: 0.3em;
+}
+.swipper-handler--spot {
+    height: 60px;
+    border-bottom: 1px solid black;
+}
+
+.swiper-buttons {
+    position: absolute;
+    bottom: 1.8rem;
+    right: 3rem;
+    z-index: 11;
+}
+
+.swiper-buttons--prev {
+    position: absolute;
+    right: 2.5rem;
+}
+
+.swiper-buttons--next {
+    position: absolute;
+    left: 3rem;
+}
+
+.swiper-buttons .swiper-button-prev {
+    /* position: absolute;
+    bottom: 0;
+    z-index: 11;
+    top: 1rem; */
+}

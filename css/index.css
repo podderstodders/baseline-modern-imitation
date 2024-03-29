@@ -1,0 +1,136 @@
+
+/*
+ font-size: clamp(2.74rem, 2.5vw, 8.38rem); 
+*/
+.app-row.row--0 {
+    position: relative;
+    padding: 1rem;
+}
+.app-row.row--0 ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+.app-row.row--0 a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2.74rem;
+}
+
+.offset-shoes {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 250px;
+}
+
+.offset-shoes img {
+
+    width: 100%;
+
+}
+
+.app-row.row--0 a:hover {
+    text-decoration: underline;
+    
+    text-decoration-thickness: 6px;
+    text-decoration-color: rgba(98, 60, 234);
+}
+
+
+.anchor-divider {
+    font-size: 2.44rem;
+    margin-inline: 0.5rem;
+}
+
+
+
+.app-row.row--1 {
+    padding: 0.5rem;
+    background-color: rgb(198, 249, 31);
+    overflow: hidden;
+    white-space: nowrap;
+}
+.app-row.row--1 p {
+    font-size: 18px;
+}
+.app-row.row--2 {
+    margin: 1em 0;
+}
+.app-row.row--2 h2 {
+    padding-inline: 0.5rem;
+}
+.app-row.row--2 .row-2--grid {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.row-2--grid .grid-item:not(:first-of-type) {
+    border-left: 1px solid black;
+}
+
+
+.row-2--grid .grid-item .grid-item--image {
+    height: 400px; 
+    transition: transform 0.3s ease;
+}
+.row-2--grid .grid-item .grid-item--image:hover {
+    transform: scaleX(-1);
+}
+.row-2--grid .grid-item .grid-item--description {
+    border-top: 1px solid black;
+    padding: 0.5rem;
+}
+
+.row-2--grid .grid-item .grid-item--description .flex-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+/* temp row */
+.app-row.temp-row {
+    height: 50vh;
+    margin: 3em 0;
+    background-color: pink;
+
+}
+
+@media(min-width: 1024px){
+    .app-row.row--0 a, .anchor-divider {
+        font-size: 6.18rem;
+    }
+
+    .app-row.row--1 p {
+        font-size: 2.74rem;
+    }
+
+    .app-row.row--0 a:hover ~ .offset-shoes {
+        display: unset;
+    }
+
+    .app-row.row--0 a:hover {
+        text-decoration-thickness: 12px;
+    }
+
+    .app-row.row--2 .row-2--mobilegrid {
+        display: none;
+    }
+    .app-row.row--2 .row-2--grid {
+        display: grid;
+        /* grid-template-columns: repeat(5, 1fr);
+        border-top: 1px solid black;
+        border-bottom: 1px solid black; */
+    }
+
+    
+}
