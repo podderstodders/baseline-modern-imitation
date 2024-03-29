@@ -19,6 +19,7 @@
     justify-content: space-between;
     align-items: start;
     padding: 0.75em 1rem;
+    overflow: scroll;
 }
 
 .header-logo {

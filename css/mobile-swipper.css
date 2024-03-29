@@ -4,7 +4,8 @@
 
     position: relative;
 }
-.mobile-swipper--2 {
+.mobile-swipper--2,
+.mobile-swipper--7 {
    overflow: hidden;
    position: relative;
 }

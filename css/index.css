@@ -5,6 +5,7 @@
 .app-row.row--0 {
     position: relative;
     padding: 1rem;
+    overflow: hidden;
 }
 .app-row.row--0 ul {
     list-style: none;
@@ -50,7 +51,11 @@
     margin-inline: 0.5rem;
 }
 
-
+.app-row h2 {
+    font-size: 1.3583rem;
+    padding-inline: 0.5rem;
+    margin-top: 1em;
+}
 
 .app-row.row--1 {
     padding: 0.5rem;
@@ -64,9 +69,7 @@
 .app-row.row--2 {
     margin: 1em 0;
 }
-.app-row.row--2 h2 {
-    padding-inline: 0.5rem;
-}
+
 .app-row.row--2 .row-2--grid {
     display: none;
     grid-template-columns: repeat(5, 1fr);
@@ -80,7 +83,7 @@
 
 
 .row-2--grid .grid-item .grid-item--image {
-    height: 400px; 
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 .row-2--grid .grid-item .grid-item--image:hover {
@@ -221,7 +224,7 @@
 .row-6--item {
     padding-left: 1rem;
     padding-top: 1.5rem;
-    height: 100vh;
+    height: 50vh;
 }
 
 .row-6--item:nth-child(2){
@@ -245,6 +248,66 @@
 
 /* end of row--6 */
 
+/* row-8 */
+.row-8--container {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    place-content: center;
+    gap: 1rem;
+}
+
+.row-8--container img {
+    object-position: center;
+    object-fit: cover;
+}
+
+/* end of row-8 */
+
+/* start of row 9 */
+.row--9.reviews {
+    border-top: 1px solid black;
+    display: grid;
+    gap: 1.5em;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+}
+
+.row--9.reviews p#first {
+    font-size: 18px;
+}
+
+/* end of row--9 */
+
+/* start of row-10 -- blog */
+.row--10.blog{
+
+   
+    border-bottom: 1px solid black;
+    display: grid;
+    gap: 1rem;
+}
+
+
+.row-10--blogItem .blogItem--image {
+    height: 200px;
+    background-color: rgb(130, 150, 168);
+   
+}
+.row-10--blogItem .blogItem--description {
+    padding: 0.5rem;
+    border-top: 1px solid black;
+}
+
+.row-10--blogItem .blogItem--description a {
+    color: inherit;
+    text-underline-offset: 7.5px;
+}
+/* end of row-10 --blog */
+
 /* temp row */
 .app-row.temp-row {
     height: 50vh;
@@ -254,6 +317,9 @@
 }
 
 @media(min-width: 1024px){
+    .app-row h2 {
+        font-size: 3.291875rem;
+    }
     .app-row.row--0 a, .anchor-divider {
         font-size: 6.18rem;
     }
@@ -311,5 +377,27 @@
 
     .row-6--item#image2 {
         border-top: none;
+    }
+
+    .row-6--item {
+       
+        height: 70vh;
+    }
+
+    .row--9.reviews {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .row--9.reviews p#first {
+        font-size: 1.758375rem;
+    }
+
+    .row--10.blog{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+    }
+
+    .row-10--blogItem {
+        border: 1px solid black
     }
 }
