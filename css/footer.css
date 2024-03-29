@@ -1,4 +1,7 @@
 
+.footer p {
+    padding: 1em;
+}
 .footer-row--grid {
     display: grid;
     gap: 1em;
