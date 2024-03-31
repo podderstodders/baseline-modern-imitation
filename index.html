@@ -6,14 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.min.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/header-menu-toggle.css">
+    <link rel="stylesheet" href="./css/header-cart-toggle.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/mobile-swipper.css">
+    <link rel="stylesheet" href="./css/gallery-swipper.css">
 </head>
 <body>
     <div id="root">
-       
         <header class="header--sticky">
             <div class="header-sticky--container">
                 <div class="header-logo">
@@ -26,13 +27,58 @@
                         <path d="M644.832 176C641.832 146 617.832 134.5 593.332 134.5C570.332 134.5 549.332 147.5 549.332 166.5C549.332 185 565.832 195.5 591.332 202C602.832 205 614.332 207.5 625.832 211C667.332 221.5 701.832 241.5 701.832 283C701.832 335.5 649.332 364 596.332 364C546.832 364 493.832 341 488.332 278H542.332C547.832 308 566.332 321 597.332 321C622.332 321 647.832 311.5 647.832 286C647.832 264.5 627.332 257.5 605.332 252C592.832 249 580.332 246 568.332 242.5C527.832 232 496.332 208.5 496.332 168.5C496.332 121 543.332 91.5 594.332 91.5C648.832 91.5 691.832 120 697.332 176H644.832Z" fill="black"/>
                         <path d="M269.406 177C275.906 137 309.406 91 376.906 91C464.906 91 484.406 145 484.406 197V299C484.406 319 485.906 342.5 488.906 357H432.406C431.406 346.5 430.906 336.5 430.906 325V313.5H430.406C422.406 334 400.906 363.5 347.906 363.5C288.406 363.5 256.906 326.5 256.906 286.5C256.906 214.5 345.406 209.5 383.406 203.5C416.906 198 430.406 190.5 430.406 169C430.406 148 410.906 134.5 377.906 134.5C349.406 134.5 327.906 151 321.906 177H269.406ZM311.406 285C311.406 306.5 329.906 321.5 360.406 321.5C396.406 321.5 431.406 299 431.406 237V208.5C425.906 223 412.906 236 366.406 245C330.406 251.5 311.406 262.5 311.406 285Z" fill="black"/>
                         <path d="M0 357V0H128.5C194.5 0 241.5 33 241.5 95C241.5 133.5 221 159 183.5 174.5V175C223 182.5 255.5 207.5 255.5 255.5C255.5 326 205 357 125.5 357H0ZM57.5 309.5H127.5C169.5 309.5 198.5 292 198.5 254C198.5 217 171 199.5 131.5 199.5H57.5V309.5ZM57.5 152.5H118.5C160.5 152.5 184.5 136 184.5 97.5C184.5 59.5 160.5 47.5 120 47.5H57.5V152.5Z" fill="black"/>
-                        </svg>
+                    </svg>   
                 </div>
                 <div class="header-mobilelist">
                     <ul>
-                        <li><a href="#" role="link">Menu</a></li>
+                        <li id="headerMobileMenu">
+                            <input type="checkbox" name="" id="headerMobileMenuToggle">
+                            <label for="" id="menuPlus">menu</label>
+                            <div class="menuSlideOut">
+                                <div class="menuSlideOut--container">
+                                    <div class="menuSlideOut-row">
+                                        <p>Click the <span class="spicyred">Menu</span> word to close<span id="northEastArrow"></span></p>
+                                    </div>
+                                    <div class="menuSlideOut-row">
+                                        shop
+                                    </div>
+                                    <div class="menuSlideOut-row">
+                                        blog
+                                        
+                                    </div>
+                                    <div class="menuSlideOut-row">
+                                        about
+                                    </div>
+                                    <div class="menuSlideOut-row">
+                                        on sale
+                                    </div>
+                                    <div class="menuSlideOut-row">
+                                        latest arrival
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#" role="link">Search</a></li>
-                        <li><a href="#" role="link">Cart (0)</a></li>
+                        <li id="headerCartMenu">
+                            <input type="checkbox" name="" id="headerMobileCartToggle">
+                            <label for="" id="menuPlus">Cart</label>
+                            <div class="cartSlideOut">
+                                <div class="cartSlideOut--container">
+                                    <div class="cartSlideOut--container__header">
+                                        Click the <span class="spicyred">Cart</span> word to close
+                                    </div>
+                                    <div class="cartSlideOut--container__row larger">
+                                        YOUR CART
+                                    </div>
+                                    <div class="cartSlideOut--container__row">
+                                        <p>YOUR CART IS CURRENTLY EMPTY</p>
+                                    </div>
+                                    <div class="cartSlideOut--container__row">
+                                        <a href="#">shop now <span id="subscribeArrow">&#8594;</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="header-tabletlist">
@@ -44,33 +90,41 @@
                             <div class="checkedContainer">
                                 <div class="checkedContainer-grid">
                                     <div class="checkedContainer-grid--item">
-                                        <h2>Shop</h2>
+                                        <h2>Europe</h2>
                                         <ul>
-                                            <li><a href="#">Shop All</a></li>
-                                            <li><a href="#">New Arrivals</a></li>
-                                            <li><a href="#">On Sale</a></li>
+                                            <li><a href="#">salvatore ferragamo</a></li>
+                                            <li><a href="#">vagabond</a></li>
+                                            <li><a href="#">carmina shoemaker</a></li>
+                                            <li><a href="#">chanel</a></li>
+                                            <li><a href="#">christian louboutin</a></li>
+                                            <li><a href="#">jimmy choo</a></li>
                                         </ul>
                                     </div>
                                     <div class="checkedContainer-grid--item">
-                                        <h2>Brands</h2>
+                                        <h2>USA</h2>
                                         <ul>
-                                            <li><a href="#">Air Jordan</a></li>
-                                            <li><a href="#">Asics</a></li>
-                                            <li><a href="#">Converse</a></li>
-                                            <li><a href="#">Crocs</a></li>
-                                            <li><a href="#">New Balance</a></li>
-                                            <li><a href="#">Nike Dunks</a></li>
-                                            <li><a href="#">Reebok</a></li>
-                                            <li><a href="#">Vans</a></li>
+                                            <li><a href="#">new balance</a></li>
+                                            <li><a href="#">nike</a></li>
+                                            <li><a href="#">adidas</a></li>
+                                            <li><a href="#">puma</a></li>
+                                            <li><a href="#">skechers</a></li>
+                                            <li><a href="#">under armour</a></li>
+                                            <li><a href="#">reebok</a></li>
+                                            <li><a href="#">vans</a></li>
                                         </ul>
                                     </div>
+                                    
                                     <div class="checkedContainer-grid--item">
-                                        <h2>Sale</h2>
+                                        <h2>Japan</h2>
                                         <ul>
-                                            <li><a href="#">Spring Sale</a></li>
-                                            <li><a href="#">Faulty Items</a></li>
-                                            <li><a href="#">Final Sale</a></li>
+                                            <li><a href="#">onitsuka tiger</a></li>
+                                            <li><a href="#">asics</a></li>
+                                            <li><a href="#">Comme des Garçons</a></li>
+                                            <li><a href="#">visvim</a></li>
+                                            <li><a href="#">converse</a></li>
+                                            <li><a href="#">sogei royal</a></li>
                                         </ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -78,163 +132,75 @@
                         <li><a href="#" role="link">blog</a></li>
                         <li><a href="#" role="link">about</a></li>
                         <li><a href="#" role="link">search</a></li>
-                        <li><a href="#" role="link">cart (0)</a></li>
+                        <li id="headerCartMenu">
+                            <input type="checkbox" name="" id="headerMobileCartToggle">
+                            <label for="" id="menuPlus">Cart</label>
+                            <div class="cartSlideOut">
+                                <div class="cartSlideOut--container">
+                                    <div class="cartSlideOut--container__header">
+                                        <p> Click the <span class="spicyred">Cart</span> word to close</p>
+                                    </div>
+                                    <div class="cartSlideOut--container__row larger">
+                                        YOUR CART
+                                    </div>
+                                    <div class="cartSlideOut--container__row">
+                                        <p>YOUR CART IS CURRENTLY EMPTY</p>
+                                    </div>
+                                    <div class="cartSlideOut--container__row">
+                                        <a href="#">shop now <span id="subscribeArrow">&#8594;</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
         </header>
         <main class="app">
-            <section class="app-row row--0">
-                <ul>
-                    <li> 
-                        <a href="#">Shop All <sup>71</sup></a> 
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe0.webp" alt="shoe offset ">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" >New Arrivals <sup>10</sup> </a> 
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe1.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                   
-                    <li>
-                        <a href="#">Air Jordan <sup>12</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe2.png" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Nike Dunk <sup>21</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe3.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">New Balance <sup>8</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe4.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Asics <sup>16</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe5.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Converse <sup>7</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe6.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Crocs <sup>4</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe7.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Reebok <sup>3</sup></a>
-                        <span class="anchor-divider">-</span>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe5.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Vans <sup>4</sup></a>
-                        <div class="offset-shoes">
-                            <img src="./assets/shoe8.webp" alt="shoe offset">
-                        </div>
-                    </li>
-                </ul>
-            </section>
-            
-            <section class="app-row row--2">
-                <h2>Latest Arrivals</h2>
-                <div class="row-2--grid">
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe0.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe1.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe2.png" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe4.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe5.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="app-row link-row">
+                <div class="link-row--container">
+                     <ul>
+                         <li><a href="#">shop All <sup>71</sup></a></li>
+                         <li><a href="#">new arrivals<sup>7</sup></a></li>
+                         <li><a href="#">air jordan<sup>16</sup></a></li>
+                         <li><a href="#">nike dunk<sup>8</sup></a></li>
+                         <li><a href="#">vans<sup>4</sup></a></li>
+                        
+                         <li><a href="#">Asics<sup>7</sup></a></li>
+                         <li><a href="#">converse<sup>3</sup></a></li>
+                         <li><a href="#">crocs<sup>4</sup></a></li>
+                         <li><a href="#">reebok<sup>3</sup></a></li>
+                         <li><a href="#">the common projects <sup>2</sup></a></li>
+                         <li><a href="#">new balance<sup>16</sup></a></li>
+                     </ul>
                 </div>
-                <div class="row-2--mobilegrid mobile-swipper--2">
+             </div>
+             <div class="app-row movingWords-row">
+                <p id="moveLeftt">Lorem ipsum dolor, consectetur adipisicing elit. Alias cupiditate veritatis laboriosam dolor voluptate repudiandae natus quibusdam aliquid consequatur libero rem sed tempore, necessitatibus ad voluptates delectus dolorum eaque animi? Rerum iusto delectus autem ad omnis culpa commodi non labore, perferendis nisi veritatis minima recusandae reiciendis deleniti architecto rem nesciunt, ipsa dolores ducimus explicabo fugiat quaerat esse quas pariatur? Rerum, quia. Ipsa nostrum obcaecati, facere labore nihil mollitia sequi quidem fuga dignissimos eaque quae sit voluptatem blanditiis et repudiandae facilis eligendi officiis non incidunt! Quaerat aperiam odit aliquid, facilis accusamus sint veniam commodi, deserunt sequi iure quod eos. Atque necessitatibus autem consequatur vitae deserunt, assumenda cumque, inventore error voluptas illum ratione laborum pariatur eligendi quo. Ea quibusdam quod nobis non obcaecati nemo laborum eos cum vitae iusto illum nisi distinctio aspernatur doloribus, beatae tenetur quia nostrum alias. Dicta ratione asperiores voluptate vitae, assumenda sed ipsam nobis magnam voluptatibus? Ducimus illum esse culpa facilis quas placeat accusamus voluptatum eum porro pariatur sapiente molestiae rerum, minima expedita sit totam reprehenderit soluta nobis quaerat doloribus, saepe a, officia doloremque! Explicabo aspernatur est, aperiam animi natus adipisci consequuntur illum laudantium repellat inventore fuga eligendi similique at voluptate qui magni saepe dolorem aut veritatis quae.</p>
+            </div>
+            <div class="app-row gallery-swipper-row">
+                <div class="app-row--header">
+                    <h2>lAtEsT arRiVaLS</h2>
+                </div>
+                <div class="gallery-swip--swipper">
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe0.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                            
+                        </div>
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
                                 <img src="./assets/shoe1.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swipper-slide--image">
-                                <img src="./assets/shoe2.png" alt="">
-                            </div>
-                            <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -243,7 +209,7 @@
                                 <img src="./assets/shoe3.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -252,7 +218,7 @@
                                 <img src="./assets/shoe4.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -261,7 +227,7 @@
                                 <img src="./assets/shoe5.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -270,7 +236,61 @@
                                 <img src="./assets/shoe6.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe7.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe8.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe3.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe4.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe5.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
+                                <div>$580.00</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swipper-slide--image">
+                                <img src="./assets/shoe0.webp" alt="">
+                            </div>
+                            <div class="swipper-slide--description">
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -289,281 +309,207 @@
                     </div>
                     <div class="swipper-handler--spot"></div>
                 </div>
-            </section>
-
-            <section class="app-row row--3">
-                <p>A sneaker store specializing in rare and hard-to-find kicks from the world's top brands.</p>
-            </section>
-            <section class="app-row row--4">
-                <h3>Popular</h3>
-                <div class="tablet-hide filterAction">
-                    <div class="filterAction--checkbox">
-                        <input type="checkbox" name="" id="specialCase" />
-                        <label for="filterAction">Sort By: Title</label>
-                        <span class="downArrow"></span>
-                        <div class="filterActions-block">
-                            <div class="filterActions-block--container">
+            </div>
+            <div class="app-row text-row">
+                <p>A shoe store specializing in rare and limited footgear from the world's top species.</p>
+            </div>
+            <div class="app-row popular-row">
+                <div class="app-row--header">
+                    <h2>pOpUlAr</h2>
+                </div>
+                <div class="popular-row--mobileFilter">
+                    <div class="mobileFilter--container">
+                        <input type="checkbox" name="" id="mobileFilterToggle">
+                        <label for="">sOrT bY: TiTle</label>
+                        <span class="popular-row--arrow">
+                            <svg width="60" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"/>
+                                </g>
+                            </svg>
+                        </span>
+                        <div class="popular-row--mobileFilter__dropdown">
+                            <div class="mobileFiler-dropdown--container">
                                 <ul>
-                                    <li>
-                                        <input type="checkbox" name="titleAsc" id="titleAsc">
-                                        <label for="titleAsc">Title, A-Z</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="titleDesc" id="titleDesc">
-                                        <label for="titleDesc">Title, Z-A</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="styleAsc" id="styleAsc">
-                                        <label for="styleAsc">Style, A-Z</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="styleDesc" id="styleDesc">
-                                        <label for="styleDesc">Style, Z-A</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="vendorAsc" id="vendorAsc">
-                                        <label for="vendorAsc">Vendor, A-Z</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="vendorDesc" id="vendorDesc">
-                                        <label for="vendorDesc">Vendor, Z-A</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="priceAsc" id="priceAsc">
-                                        <label for="priceAsc">Price, A-Z</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="priceDesc" id="priceDesc">
-                                        <label for="priceDesc">Price, Z-A</label>
-                                    </li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Title, A-Z</label></li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Title, A-Z</label></li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Vendor, A-Z</label></li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Vendor, A-Z</label></li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Price, low to high</label></li>
+                                    <li><input type="checkbox" name="sortChoice" id=""><label for="sortChoice">Price, high to low</label></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row-4--grid">
-                    <div class="row-4--gridItem mobile-hidden">
-                        <div>Title</div>
-                        <div>Style</div>
-                        <div>Vendor</div>
-                        <div>Price</div>
+                <div class="popular-row--container">
+                    <div class="popular-row--item mobileHidden">
+                        <div class="popular-row--item__name">Title</div>
+                        <div class="popular-row--item__style">Style</div>
+                        <div class="popular-row--item__vendor">Vendor</div>
+                        <div class="popular-row--item__price">Price</div>
                     </div>
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Air Jordan 1 High Bleached Coral</div>
-                        <div><span class="tablet-hide">Style:</span>555088-108</div>
-                        <div><span class="tablet-hide">Vendor:</span>Jordan</div>
-                        <div><span class="tablet-hide">Price:</span>$520.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Air Jordan 1 Mid Light Smoke Grey</div>
-                        <div><span class="tablet-hide">Style:</span>554724-092</div>
-                        <div><span class="tablet-hide">Vendor:</span>Jordan</div>
-                        <div><span class="tablet-hide">Price:</span>$390.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Air Jordan 4 Thunder</div>
-                        <div><span class="tablet-hide">Style:</span>DH6927-017</div>
-                        <div><span class="tablet-hide">Vendor:</span>Jordan</div>
-                        <div><span class="tablet-hide">Price:</span>$550.00</div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Air Jordan 1 High Bleached Coral</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>555088-108</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Jordan</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$520.00</div>
+                      </div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Air Jordan 1 Mid Light Smoke Grey</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>554724-092</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Jordan</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$390.00</div>
                     </div>
                     
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Air Jordan 4 Wmns Off-White Sail</div>
-                        <div><span class="tablet-hide">Style:</span>CV9388-100</div>
-                        <div><span class="tablet-hide">Vendor:</span>Jordan</div>
-                        <div><span class="tablet-hide">Price:</span>$2,550.00</div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Air Jordan 4 Thunder</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>DH6927-017</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Jordan</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$550.00</div>
+                    </div>
+        
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Air Jordan 4 Wmns Off-White Sail</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>CV9388-100</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Jordan</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$2,550.00</div>
                     </div>
                     
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Asics Gel-Kayano 14 Aritzia White Leprechaun</div>
-                        <div><span class="tablet-hide">Style:</span>1203A328-100</div>
-                        <div><span class="tablet-hide">Vendor:</span>Asics</div>
-                        <div><span class="tablet-hide">Price:</span>$400.00</div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Asics Gel-Kayano 14 Aritzia White Leprechaun</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>1203A328-100</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Asics</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$400.00</div>
                     </div>
                     
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Asics Gel-Lyte III Ronnie Fieg Homage (Special Box)</div>
-                        <div><span class="tablet-hide">Style:</span>H54FK-6540</div>
-                        <div><span class="tablet-hide">Vendor:</span>Asics</div>
-                        <div><span class="tablet-hide">Price:</span>$1,040.00</div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Asics Gel-Lyte III Ronnie Fieg Homage (Special Box)</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>H54FK-6540</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Asics</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$1,040.00</div>
                     </div>
                     
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Converse Chuck Taylor All-star 70 Off-White</div>
-                        <div><span class="tablet-hide">Style:</span>163862C</div>
-                        <div><span class="tablet-hide">Vendor:</span>Converse</div>
-                        <div><span class="tablet-hide">Price:</span>$580.00</div>
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Converse Chuck Taylor All-star 70 Off-White</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>163862C</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Converse</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$580.00</div>
                     </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Converse Chuck Taylor All-star 70 Off-White Vulcanized</div>
-                        <div><span class="tablet-hide">Style:</span>162204C</div>
-                        <div><span class="tablet-hide">Vendor:</span>Converse</div>
-                        <div><span class="tablet-hide">Price:</span>$3,000.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>New Balance 550 Aime Leon Dore Olive</div>
-                        <div><span class="tablet-hide">Style:</span>BB550AD1</div>
-                        <div><span class="tablet-hide">Vendor:</span>New Balance</div>
-                        <div><span class="tablet-hide">Price:</span>$520.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>New Balance 550 Rich Paul Forever Yours</div>
-                        <div><span class="tablet-hide">Style:</span>BB550RR1</div>
-                        <div><span class="tablet-hide">Vendor:</span>New Balance</div>
-                        <div><span class="tablet-hide">Price:</span>$340.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>New Balance 550 Wmns Bubblegum Pink</div>
-                        <div><span class="tablet-hide">Style:</span>BBW550BD</div>
-                        <div><span class="tablet-hide">Vendor:</span>New Balance</div>
-                        <div><span class="tablet-hide">Price:</span>$280.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                        <div><span class="tablet-hide">Style:</span>M990AC6</div>
-                        <div><span class="tablet-hide">Vendor:</span>New Balance</div>
-                        <div><span class="tablet-hide">Price:</span>$580.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>New Balance 998 Concepts C-Note</div>
-                        <div><span class="tablet-hide">Style:</span>M998TN2</div>
-                        <div><span class="tablet-hide">Vendor:</span>New Balance</div>
-                        <div><span class="tablet-hide">Price:</span>$920.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Nike Dunk Low Montreal Bagel Sesame (Special Box)</div>
-                        <div><span class="tablet-hide">Style:</span>DZ4853-200</div>
-                        <div><span class="tablet-hide">Vendor:</span>Nike</div>
-                        <div><span class="tablet-hide">Price:</span>$420.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Nike Dunk Low Sashiko</div>
-                        <div><span class="tablet-hide">Style:</span>DV0834-101</div>
-                        <div><span class="tablet-hide">Vendor:</span>Nike</div>
-                        <div><span class="tablet-hide">Price:</span>$320.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Nike Sb Dunk Low Ben & Jerry's Chunky Dunky</div>
-                        <div><span class="tablet-hide">Style:</span>CU3244-100</div>
-                        <div><span class="tablet-hide">Vendor:</span>Nike</div>
-                        <div><span class="tablet-hide">Price:</span>$2,400.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Reebok Club C 85 Jjjjound White</div>
-                        <div><span class="tablet-hide">Style:</span>DV7763</div>
-                        <div><span class="tablet-hide">Vendor:</span>Reebok</div>
-                        <div><span class="tablet-hide">Price:</span>$520.00</div>
-                    </div>
-                    
-                    <div class="row-4--gridItem">
-                        <div><span class="tablet-hide">Title:</span>Vans Era Pro Supreme Cdg Shirt Digi Camo Green</div>
-                        <div><span class="tablet-hide">Style:</span>VNOVFB9QS</div>
-                        <div><span class="tablet-hide">Vendor:</span>Vans</div>
-                        <div><span class="tablet-hide">Price:</span>$700.00</div>
-                    </div>                    
-                </div>
 
-            </section>
-            
-            <section class="app-row row--6">
-                <div class="row-6--container">
-                    <div class="row-6--item" id="image1">
-                        Shop Nike Dunk
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Converse Chuck Taylor All-star 70 Off-White Vulcanized</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>162204C</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Converse</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$3,000.00</div>
                     </div>
-                    <div class="row-6--item" id="image2">
-                        Shop Air Jordan
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>New Balance 550 Aime Leon Dore Olive</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>BB550AD1</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>New Balance</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$520.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>New Balance 550 Rich Paul Forever Yours</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>BB550RR1</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>New Balance</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$340.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>New Balance 550 Wmns Bubblegum Pink</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>BBW550BD</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>New Balance</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$280.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>M990AC6</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>New Balance</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$580.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>New Balance 998 Concepts C-Note</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>M998TN2</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>New Balance</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$920.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Nike Dunk Low Montreal Bagel Sesame (Special Box)</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>DZ4853-200</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Nike</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$420.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Nike Dunk Low Sashiko</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>DV0834-101</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Nike</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$320.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Nike Sb Dunk Low Ben & Jerry's Chunky Dunky</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>CU3244-100</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Nike</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$2,400.00</div>
+                    </div>
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Reebok Club C 85 Jjjjound White</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>DV7763</div>
+                        <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Reebok</div>
+                        <div class="popular-row--item__price"><span class="mobileLabel">Artwork Price: </span>$520.00</div>
+                    </div>
+                       
+                    
+                    <div class="popular-row--item">
+                        <div class="popular-row--item__name"><span class="mobileLabel">Shoe Name: </span>Vans Era Pro Supreme Cdg Shirt Digi Camo Green</div>
+                        <div class="popular-row--item__style"><span class="mobileLabel">Style Id: </span>VNOVFB9QS</div>
+                         <div class="popular-row--item__vendor"><span class="mobileLabel">Vendor Name: </span>Vans</div>
+                         <div class="popular-row--item__price"><span class="mobileLabel">Shoe Price: </span>$700.00</div>
+                      </div>
+                </div>
+            </div>
+            <div class="app-row image-row">
+                <div class="image-row--grid">
+                    <div class="image-row--grid__item" id="image1">
+                        <p>shop nike dunk</p>
+                    </div>
+                    <div class="image-row--grid__item" id="image2">
+                        <p>shop air jordan</p>
                     </div>
                 </div>
-            </section>
-            <!--copy swiper-->
-            <section class="app-row row--2">
-                <h2>Nike Dunks</h2>
-                <div class="row-2--grid">
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe0.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe1.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe2.png" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe4.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="grid-item--image">
-                            <img src="./assets/shoe5.webp" alt="fdaf">
-                        </div>
-                        <div class="grid-item--description">
-                            <div class="flex-row">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
-                                <div>$580.00</div>
-                            </div>
-                        </div>
-                    </div>
+               
+            </div>
+            <div class="app-row gallery-swipper-row">
+                <div class="app-row--header">
+                    <h2>lAtEsT arRiVaLS</h2>
                 </div>
-                <div class="row-2--mobilegrid mobile-swipper--7">
+                <div class="gallery-swip--swipper2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
-                                <img src="./assets/shoe1.webp" alt="">
+                                <img src="./assets/shoe0.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
+                            
                         </div>
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
-                                <img src="./assets/shoe2.png" alt="">
+                                <img src="./assets/shoe1.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -572,7 +518,7 @@
                                 <img src="./assets/shoe3.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -581,7 +527,7 @@
                                 <img src="./assets/shoe4.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -590,7 +536,7 @@
                                 <img src="./assets/shoe5.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -599,25 +545,25 @@
                                 <img src="./assets/shoe6.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
-                                <img src="./assets/shoe1.webp" alt="">
+                                <img src="./assets/shoe7.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
-                                <img src="./assets/shoe2.png" alt="">
+                                <img src="./assets/shoe8.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -626,7 +572,7 @@
                                 <img src="./assets/shoe3.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -635,7 +581,7 @@
                                 <img src="./assets/shoe4.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -644,16 +590,16 @@
                                 <img src="./assets/shoe5.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="swipper-slide--image">
-                                <img src="./assets/shoe6.webp" alt="">
+                                <img src="./assets/shoe0.webp" alt="">
                             </div>
                             <div class="swipper-slide--description">
-                                <div>New Balance 990V6 Action Bronson Lapis Lazuli</div>
+                                <div>Lorem ipsum dolor</div>
                                 <div>$580.00</div>
                             </div>
                         </div>
@@ -672,155 +618,338 @@
                     </div>
                     <div class="swipper-handler--spot"></div>
                 </div>
-            </section>
-            <section class="app-row row--8">
-                <h2>As seen in</h2>
-                <div class="row-8--container">
-                    <div>
+            </div>
+            <div class="app-row rewards-row">
+                <div class="app-row--header">
+                    <h2>aS sEEn In</h2>
+                </div>
+                <div class="rewards-row--container">
+                    <div class="rewards-row--container__item">
                         <img src="./assets/award-1.webp" alt="as seen on tv">
                     </div>
-                    <div>
+                    <div class="rewards-row--container__item">
                         <img src="./assets/award-2.webp" alt="as seen on tv">
                     </div>
-                    <div>
+                    <div class="rewards-row--container__item">
                         <img src="./assets/award-3.webp" alt="as seen on tv">
                     </div>
-                    <div>
+                    <div class="rewards-row--container__item">
                         <img src="./assets/award-4.webp" alt="as seen on tv">
                     </div>
-                    <div>
+                    <div class="rewards-row--container__item">
                         <img src="./assets/award-5.webp" alt="as seen on tv">
                     </div>
                 </div>
-            </section>
-
-            <section class="app-row row--9">
-                <h2>From the fans</h2>
-                <div class="row--9 reviews">
-                    <div class="row-9--reviewItem">
-                        <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem voluptate odio ipsum similique quo.</p>
-                        <p>- Chris L.</p>
+            </div>
+            <div class="app-row reviews-row">
+                <div class="app-row--header">
+                    <h2>FRoM thE FAnS</h2>
+                </div>
+                <div class="reviews-row--container">
+                    <div class="reviews-row--container__item">
+                        <p class="reviews-review">Lorem ipsum dolor consectetur adipisicing elit. Exercitationem, quisquam!</p>
+                        <p class="reviews-person">- Lorem I.</p>
                     </div>
-                    <div class="row-9--reviewItem">
-                        <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem voluptate odio ipsum similique quo.</p>
-                        <p>- Chris L.</p>
+                    <div class="reviews-row--container__item">
+                        <p class="reviews-review">Lorem ipsum dolor consectetur adipisicing elit. Exercitationem, quisquam!</p>
+                        <p class="reviews-person">- Ipsum D.</p>
                     </div>
-                    <div class="row-9--reviewItem">
-                        <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem voluptate odio ipsum similique quo.</p>
-                        <p>- Chris L.</p>
+                    <div class="reviews-row--container__item">
+                        <p class="reviews-review">Lorem ipsum dolor consectetur adipisicing elit. Exercitationem, quisquam!</p>
+                        <p class="reviews-person">- Dolor S.</p>
                     </div>
                 </div>
-            </section>
-
-            <section class="app-row row--10">
-                <h2>Blog</h2>
-                <div class="row--10 blog">
-                    <div class="row-10--blogItem">
-                        <div class="blogItem--image"></div>
-                        <div class="blogItem--description">
-                            <h6>Introducing our new NYC Store</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, veritatis....</p>
-                            <a href="#">Read More -></a>
-                        </div>
-                    </div>
-                    <div class="row-10--blogItem">
-                        <div class="blogItem--image"></div>
-                        <div class="blogItem--description">
-                            <h6>New sneaker brands to watch out for</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat porro magni at ullam. Aliquid error nihil iste quidem aut rerum nesciunt commodi?...</p>
-                            <a href="#">Read More -></a>
-                        </div>
-                    </div>
-                    <div class="row-10--blogItem">
-                        <div class="blogItem--image"></div>
-                        <div class="blogItem--description">
-                            <h6>Latest Drop</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, veritatis....</p>
-                            <a href="#">Read More -></a>
-                        </div>
-                    </div>
+            </div>
+            <div class="app-row blog-row">
+                <div class="app-row--header">
+                     <h2>tHE bLoG</h2>
                 </div>
-            </section>
-
+                <div class="blog-row--container">
+                     <div class="blog-row--blogItem">
+                         <div class="blogItem--image"></div>
+                         <div class="blogItem--description">
+                             <p class="blogItem__title">lorem lorem</p>
+                             <p class="blogItem__date">jUly 10, 2024</p>
+                             <p class="blogItem__text">Lorem ipsum dolor consectetur adipisicing elit. Consequuntur doloremque totam veniam voluptatibus tempora dolor!...</p>
+                             <div class="blog-button">
+                                 <a href="#">read more <span id="blogArrow">&#8594;</span></a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="blog-row--blogItem">
+                         <div class="blogItem--image"></div>
+                         <div class="blogItem--description">
+                             <p class="blogItem__title">lorem lorem</p>
+                             <p class="blogItem__date">jUly 10, 2024</p>
+                             <p class="blogItem__text">Lorem ipsum dolor consectetur adipisicing elit. Consequuntur doloremque totam veniam voluptatibus tempora dolor!...</p>
+                             <div class="blog-button">
+                                 <a href="#">read more <span id="blogArrow">&#8594;</span></a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="blog-row--blogItem">
+                         <div class="blogItem--image"></div>
+                         <div class="blogItem--description">
+                             <p class="blogItem__title">lorem lorem</p>
+                             <p class="blogItem__date">jUly 10, 2024</p>
+                             <p class="blogItem__text">Lorem ipsum dolor consectetur adipisicing elit. Consequuntur doloremque totam veniam voluptatibus tempora dolor!...</p>
+                             <div class="blog-button">
+                                 <a href="#">read more <span id="blogArrow">&#8594;</span></a>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+             </div> 
         </main>
         <footer class="footer">
-            <div class="footer-row--grid">
-                <div class="footer-grid--item">
-                    <h6>About</h6>
-                    <p>This is an imitation. Product shots are provided by Shopify, which is provided by <a href="https://odto.com/" target="_blank">ODTO</a>.</p>
+            <div class="footer-row footer-row--subscribe">
+                <p>Receive special offers and first look at new products.</p>
+                <div class="subscribe-form">
+                    <input type="email" name="email4subscribing" id="email4subscribing" placeholder="EMAIL ADDRESS"/>
+                    <div class="subscribe-button">
+                        <a href="#">Subscribe <span id="subscribeArrow">&#8594;</span></a>
+                    </div>
                 </div>
-                <div class="footer-grid--item">
-                    <h6>Shop</h6>
+            </div>
+            <div class="footer-row footer-row--links">
+               
+                <div class="links-statement">
+                    <h2>About</h2>
+                    <p>This is a demo project. Webside Design from <a href="https://www.shopify.com/" target="_blank">Shopify</a>. Product shots are provided by <a href="https://odto.com/" target="_blank">ODTO.</a></p>
+                </div>
+                <div class="links-list">
+                    <h2>Shop</h2>
                     <ul>
-                        <li><a href="#">Shop All</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">On Sale</a></li>
-                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">shop all</a></li>
+                        <li><a href="#">new arrivals</a></li>
+                        <li><a href="#">on sale</a></li>
+                        <li><a href="#">brands</a></li>
+
                     </ul>
                 </div>
-                <div class="footer-grid--item">
-                    <h6>Information</h6>
+                <div class="links-list">
+                    <h2>Information</h2>
                     <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">faq</a></li>
+                        <li><a href="#">contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-grid--item">
-                    <h6>Find Us</h6>
+                <div class="links-list">
+                    <h2>find us</h2>
                     <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">TikTok</a></li>
-                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">facebook</a></li>
+                        <li><a href="#">instagram</a></li>
+                        <li><a href="#">tiktok</a></li>
+                        <li><a href="#">youtube</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-row--bottom"></div>
-            <p>Powered by Passion.</p>
-            <div class="footer-row--logo">
-                <svg width="1595" height="364" viewBox="0 0 1595 364" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1590.55 280.5C1575.55 333.5 1531.55 364 1471.05 364C1394.05 364 1341.55 308.5 1341.55 227C1341.55 148.5 1396.05 91.5 1471.05 91.5C1560.05 91.5 1594.05 161 1594.55 232.5V243H1394.05C1398.55 290.5 1429.05 319.5 1470.55 319.5C1501.55 319.5 1527.55 307.5 1536.55 280.5H1590.55ZM1394.55 203H1540.55C1537.05 164 1514.55 134.5 1470.55 134.5C1428.55 134.5 1400.55 162 1394.55 203Z" fill="black"/>
-                    <path d="M1112.4 357V98.5H1166.4V145C1180.4 115.5 1203.9 92 1243.9 92C1311.4 92 1337.4 136 1337.4 194V357H1282.9V204C1282.9 162.5 1267.9 139 1231.9 139C1195.9 139 1167.4 170 1167.4 235.5V357H1112.4Z" fill="black"/>
-                    <path d="M1090.29 55H1032.79V0H1090.29V55ZM1031.79 357V98.5H1086.79V357H1031.79Z" fill="black"/>
-                    <path d="M954.605 0H1009.61V357H954.605V0Z" fill="black"/>
-                    <path d="M942.449 280.5C927.449 333.5 883.449 364 822.949 364C745.949 364 693.449 308.5 693.449 227C693.449 148.5 747.949 91.5 822.949 91.5C911.949 91.5 945.949 161 946.449 232.5V243H745.949C750.449 290.5 780.949 319.5 822.449 319.5C853.449 319.5 879.449 307.5 888.449 280.5H942.449ZM746.449 203H892.449C888.949 164 866.449 134.5 822.449 134.5C780.449 134.5 752.449 162 746.449 203Z" fill="black"/>
-                    <path d="M644.832 176C641.832 146 617.832 134.5 593.332 134.5C570.332 134.5 549.332 147.5 549.332 166.5C549.332 185 565.832 195.5 591.332 202C602.832 205 614.332 207.5 625.832 211C667.332 221.5 701.832 241.5 701.832 283C701.832 335.5 649.332 364 596.332 364C546.832 364 493.832 341 488.332 278H542.332C547.832 308 566.332 321 597.332 321C622.332 321 647.832 311.5 647.832 286C647.832 264.5 627.332 257.5 605.332 252C592.832 249 580.332 246 568.332 242.5C527.832 232 496.332 208.5 496.332 168.5C496.332 121 543.332 91.5 594.332 91.5C648.832 91.5 691.832 120 697.332 176H644.832Z" fill="black"/>
-                    <path d="M269.406 177C275.906 137 309.406 91 376.906 91C464.906 91 484.406 145 484.406 197V299C484.406 319 485.906 342.5 488.906 357H432.406C431.406 346.5 430.906 336.5 430.906 325V313.5H430.406C422.406 334 400.906 363.5 347.906 363.5C288.406 363.5 256.906 326.5 256.906 286.5C256.906 214.5 345.406 209.5 383.406 203.5C416.906 198 430.406 190.5 430.406 169C430.406 148 410.906 134.5 377.906 134.5C349.406 134.5 327.906 151 321.906 177H269.406ZM311.406 285C311.406 306.5 329.906 321.5 360.406 321.5C396.406 321.5 431.406 299 431.406 237V208.5C425.906 223 412.906 236 366.406 245C330.406 251.5 311.406 262.5 311.406 285Z" fill="black"/>
-                    <path d="M0 357V0H128.5C194.5 0 241.5 33 241.5 95C241.5 133.5 221 159 183.5 174.5V175C223 182.5 255.5 207.5 255.5 255.5C255.5 326 205 357 125.5 357H0ZM57.5 309.5H127.5C169.5 309.5 198.5 292 198.5 254C198.5 217 171 199.5 131.5 199.5H57.5V309.5ZM57.5 152.5H118.5C160.5 152.5 184.5 136 184.5 97.5C184.5 59.5 160.5 47.5 120 47.5H57.5V152.5Z" fill="black"/>
-                </svg>
+            <div class="footer-row footer-row--copyright">
+                <div class="copyright--lhs">
+                    <p>&copy; 2024, richardvuster / <a href="#" target="_blank">podderstodders</a></p>
+                    <p>powered by passion</p>
+                </div>
+                <div class="copyright--rhs">
+                    <input type="checkbox" name="" id="copyrightToggle">
+                   <label for="">United States (USD$) </label>
+                   <span class="copyright-rhs--arrow">
+                    <svg width="60" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"/>
+                        </g>
+                    </svg>
+                   </span>
+                   <div class="copyright--moneys">
+                        <div class="copyright-moneys--container">
+                            <div>UAE (د.إ;)</div>
+                            <div>Afghan (Afs)</div>
+                            <div>Albanian (L)</div>
+                            <div>Armenian (AMD)</div>
+                            <div>Netherlands (NAƒ)</div>
+                            <div>Angolan (Kz)</div>
+                            <div>Argentine ($)</div>
+                            <div>Australian ($)</div>
+                            <div>Aruban (ƒ)</div>
+                            <div>Azerbaijani (AZN)</div>
+                            <div>Bosnia (KM)</div>
+                            <div>Barbadian (Bds$)</div>
+                            <div>Bangladeshi (৳)</div>
+                            <div>Bulgarian (BGN)</div>
+                            <div>Bahraini (.د.ب)</div>
+                            <div>Burundi (FBu)</div>
+                            <div>Bermudian (BD$)</div>
+                            <div>Brunei (B$)</div>
+                            <div>Bolivian (Bs.)</div>
+                            <div>Brazilian (R$)</div>
+                            <div>Bahamian (B$)</div>
+                            <div>Bhutanese (Nu.)</div>
+                            <div>Botswana (P)</div>
+                            <div>Belarusian (Br)</div>
+                            <div>Belize (BZ$)</div>
+                            <div>Canadian ($)</div>
+                            <div>Congolese (F)</div>
+                            <div>Swiss (Fr.)</div>
+                            <div>Chilean ($)</div>
+                            <div>Chinese (¥)</div>
+                            <div>Colombian (Col$)</div>
+                            <div>Costa (₡)</div>
+                            <div>Cuban ($)</div>
+                            <div>Cape (Esc)</div>
+                            <div>Czech (Kč)</div>
+                            <div>Djiboutian (Fdj)</div>
+                            <div>Danish (Kr)</div>
+                            <div>Dominican (RD$)</div>
+                            <div>Algerian (د.ج)</div>
+                            <div>Estonian (KR)</div>
+                            <div>Egyptian (£)</div>
+                            <div>Eritrean (Nfa)</div>
+                            <div>Ethiopian (Br)</div>
+                            <div>European (€)</div>
+                            <div>Fijian (FJ$)</div>
+                            <div>Falkland (£)</div>
+                            <div>British (£)</div>
+                            <div>Georgian (GEL)</div>
+                            <div>Ghanaian (GH₵)</div>
+                            <div>Gibraltar (£)</div>
+                            <div>Gambian (D)</div>
+                            <div>Guinean (FG)</div>
+                            <div>Central (CFA)</div>
+                            <div>Guatemalan (Q)</div>
+                            <div>Guyanese (GY$)</div>
+                            <div>Hong (HK$)</div>
+                            <div>Honduran (L)</div>
+                            <div>Croatian (kn)</div>
+                            <div>Haitian (G)</div>
+                            <div>Hungarian (Ft)</div>
+                            <div>Indonesian (Rp)</div>
+                            <div>Israeli (₪)</div>
+                            <div>Indian (₹)</div>
+                            <div>Iraqi (د.ع)</div>
+                            <div>Iranian (IRR)</div>
+                            <div>Icelandic (kr)</div>
+                            <div>Jamaican (J$)</div>
+                            <div>Jordanian (JOD)</div>
+                            <div>Japanese (¥)</div>
+                            <div>Kenyan (KSh)</div>
+                            <div>Kyrgyzstani (сом)</div>
+                            <div>Cambodian (៛)</div>
+                            <div>Comorian (KMF)</div>
+                            <div>North (W)</div>
+                            <div>South (W)</div>
+                            <div>Kuwaiti (KWD)</div>
+                            <div>Cayman (KY$)</div>
+                            <div>Kazakhstani (T)</div>
+                            <div>Lao (KN)</div>
+                            <div>Lebanese (£)</div>
+                            <div>Sri (Rs)</div>
+                            <div>Liberian (L$)</div>
+                            <div>Lesotho (M)</div>
+                            <div>Lithuanian (Lt)</div>
+                            <div>Latvian (Ls)</div>
+                            <div>Libyan (LD)</div>
+                            <div>Moroccan (MAD)</div>
+                            <div>Moldovan (MDL)</div>
+                            <div>Malagasy (FMG)</div>
+                            <div>Macedonian (MKD)</div>
+                            <div>Myanma (K)</div>
+                            <div>Mongolian (₮)</div>
+                            <div>Macanese (P)</div>
+                            <div>Mauritanian (UM)</div>
+                            <div>Mauritian (Rs)</div>
+                            <div>Maldivian (Rf)</div>
+                            <div>Malawian (MK)</div>
+                            <div>Mexican ($)</div>
+                            <div>Malaysian (RM)</div>
+                            <div>Mozambican (MTn)</div>
+                            <div>Namibian (N$)</div>
+                            <div>Nigerian (₦)</div>
+                            <div>Nicaraguan (C$)</div>
+                            <div>Norwegian (kr)</div>
+                            <div>Nepalese (NRs)</div>
+                            <div>New (NZ$)</div>
+                            <div>Omani (OMR)</div>
+                            <div>Panamanian (B./)</div>
+                            <div>Peruvian (S/.)</div>
+                            <div>Papua (K)</div>
+                            <div>Philippine (₱)</div>
+                            <div>Pakistani (Rs.)</div>
+                            <div>Polish (zł)</div>
+                            <div>Paraguayan (₲)</div>
+                            <div>Qatari (QR)</div>
+                            <div>Romanian (L)</div>
+                            <div>Serbian (din.)</div>
+                            <div>Russian (R)</div>
+                            <div>Saudi (SR)</div>
+                            <div>Solomon (SI$)</div>
+                            <div>Seychellois (SR)</div>
+                            <div>Sudanese (SDG)</div>
+                            <div>Swedish (kr)</div>
+                            <div>Singapore (S$)</div>
+                            <div>Saint (£)</div>
+                            <div>Sierra (Le)</div>
+                            <div>Somali (Sh.)</div>
+                            <div>Surinamese ($)</div>
+                            <div>Syrian (LS)</div>
+                            <div>Swazi (E)</div>
+                            <div>Thai (฿)</div>
+                            <div>Tajikistani (TJS)</div>
+                            <div>Turkmen (m)</div>
+                            <div>Tunisian (DT)</div>
+                            <div>Turkish (TRY)</div>
+                            <div>Trinidad (TT$)</div>
+                            <div>New (NT$)</div>
+                            <div>Tanzanian (TZS)</div>
+                            <div>Ukrainian (UAH)</div>
+                            <div>Ugandan (USh)</div>
+                            <div>United (US$)</div>
+                            <div>Uruguayan ($U)</div>
+                            <div>Uzbekistani (UZS)</div>
+                            <div>Venezuelan (Bs)</div>
+                            <div>Vietnamese (₫)</div>
+                            <div>Vanuatu (VT)</div>
+                            <div>Samoan (WS$)</div>
+                                                       
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="footer-row footer-logo">
+                <div class="footer-logo--container">
+                    <img src="./assets/baseline-logo.svg" alt="">
+                </div>
             </div>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper1 = new Swiper(".mobile-swipper--2", {
-      loop: true,
-      slidesPerView: "auto",
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    var swiper2 = new Swiper(".mobile-swipper--7", {
-      loop: true,
-      slidesPerView: "auto",
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+    <script>
+      var swiper1 = new Swiper(".gallery-swip--swipper", {
+        loop: true,
+        slidesPerView: "auto",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper2 = new Swiper(".gallery-swip--swipper2", {
+        loop: true,
+        slidesPerView: "auto",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      })
+    </script>
 </body>
 </html>

@@ -66,8 +66,3 @@ legend
     overflow: hidden;
    
 }
-
-ul[role=list] {
-  list-style: none;
-  padding: 0;
-}
