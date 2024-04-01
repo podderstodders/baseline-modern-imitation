@@ -20,3 +20,11 @@ Legal Disclaimer:
 3. No copyright infringement or misuse of trademarks is intended.
 4. The deployment of this project on GitHub Pages does not imply endorsement or sponsorship by GitHub.
 5. This project will not be used for any commercial purposes.
+
+------------------------------------------
+
+CSS problems:
+
+1. on mobile screens, scrolling down towards the end of the footer, there seems to be a huge block of white space. 
+
+This is because of the menu toggle checkbox height. Removing the checked toggle functionality will remove the white space. Damn. 
