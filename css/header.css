@@ -195,7 +195,8 @@ span#northEastArrow::after {
 .checkedContainer-grid--item a:hover{
     text-decoration: underline;
     text-underline-offset: 10px;
-    text-decoration-color: rgba(0, 0, 0, 0.8);
+    color: #D2ED9C;
+    text-decoration-color: #D2ED9C;
     text-decoration-thickness: 5px;
 
 }

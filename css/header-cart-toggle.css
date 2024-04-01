@@ -74,10 +74,11 @@
 
 .cartSlideOut--container__row a {
     color: inherit;
+    text-transform: uppercase;
 }
 
 .cartSlideOut--container__row a:hover {
-    color: rgb(255, 10, 130);
+    color: #D2ED9C;
 }
 
 .cartSlideOut--container__row.larger {
